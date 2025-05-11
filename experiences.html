@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="page-title">Experiences</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 4px;
+            background: #3498db;
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item .content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #3498db;
+            left: -39px;
+            top: 15px;
+        }
+        .content {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+        .date {
+            background-color: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .company {
+            font-weight: bold;
+            color: #3498db;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .position {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .location {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .experience-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .logo {
+            max-width: 150px;
+            max-height: 100px;
+        }
+        .missions {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .skills {
+            background-color: #f0f8ff;
+            color: #3498db;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <button id="languageToggle">
+            <span class="lang-en">EN</span>
+            <span class="lang-fr">FR</span>
+        </button>
+    </div>
+    <header>
+        <h1 data-translate="experiences_title">My Professional Experiences</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" data-translate="home">Home</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="project.html" data-translate="projects">Projects</a></li>
+            <li><a href="resume.html" data-translate="resume">Resume</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="timeline">
+            <div class="timeline-item left">    
+                <div class="content">
+                    <div class="experience-header">
+                        <div class="company" data-translate="company_1">Institut de Cancérologie de l'Ouest</div>
+                        <img src="Photos/ico-logo.png" alt="ICO Logo" class="logo">
+                    </div>
+                    <div class="experience-details">
+                        <span class="date" data-translate="date_1">September 2024 - September 2025</span>
+                        <div class="position" data-translate="position_1">Apprentice Data Scientist</div>
+                        <div class="skills" data-translate="skills_1">Python | R | Deep Learning | LLM | Azure SDK | Prompt Engineering | NLP | Data Pipeline | Scientific Research</div>
+                        <div class="location">Nantes, France</div>
+                        <p class="description" data-translate="description_1"></p>
+                        <div class="missions" data-translate="missions_1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="content">
+                    <div class="experience-header">
+                        <div class="company" data-translate="company_2">Centre de Recherche Economique et Management</div>
+                        <img src="Photos/crem-logo.png" alt="CREM Logo" class="logo">
+                    </div>
+                    <div class="experience-details">
+                        <span class="date" data-translate="date_2">May 2024 - July 2024</span>
+                        <div class="position" data-translate="position_2">Intern Data Scientist</div>
+                        <div class="skills" data-translate="skills_2">R | Machine Learning | Time Series Forecasting | Statistics | Data Visualization | Git | R Package Development</div>
+                        <div class="location">Rennes, France</div>
+                        <p class="description" data-translate="description_2"></p>
+                        <div class="missions" data-translate="missions_2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="content">
+                    <div class="experience-header">
+                        <div class="company" data-translate="company_3">LACTALIS</div>
+                        <img src="Photos/lactalis-logo.png" alt="Lactalis Logo" class="logo">
+                    </div>
+                    <div class="experience-details">
+                        <span class="date" data-translate="date_3">May 2023 - August 2023</span>
+                        <div class="position" data-translate="position_3">Intern Data Steward</div>
+                        <div class="skills" data-translate="skills_3">VBA | NLP | RegEx | Excel | Data Quality</div>
+                        <div class="location">Laval, France</div>
+                        <p class="description" data-translate="description_3"></p>
+                        <div class="missions" data-translate="missions_3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

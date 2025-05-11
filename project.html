@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </head>
+<body>
+    <div class="language-toggle">
+        <button id="languageToggle">
+            <span class="lang-en">EN</span>
+            <span class="lang-fr">FR</span>
+        </button>
+    </div>
+    <header>
+        <h1 data-translate="projects">My Projects</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" data-translate="home">Home</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="project.html" data-translate="projects">Projects</a></li>
+            <li><a href="resume.html" data-translate="resume">Resume</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Hackathon/Challenge Projects -->
+        <section class="hackathon-projects">
+            <h2 data-translate="hackathon-projects">Hackathon Projects</h2>
+
+            <section class="project featured">
+                <h2 data-translate="rennes-challenge">Finalist at Rennes Data Challenge 2025</h2>
+                <p data-translate="rennes-challenge-description">Our team was a finalist in the 'Best Project' category at the Rennes Data Challenge by developing a solution for Enedis in just 24 hours. Faced with the strategic challenge of resource planning, the problem was to determine if Enedis would have sufficient operational capacity and to identify potential bottlenecks. We designed a predictive model using seasonal Prophet models to anticipate work hour needs by activity, month, and skill for the year 2025.</p>
+                <a href="Projects/Data_Challenge_merged.pdf" class="btn" data-translate="view-project">View Project</a>
+            </section>
+        </section>  
+
+        <!-- Artificial Intelligence Projects -->
+        <section class="artificial-intelligence">
+            <h2 data-translate="ai-projects">Artificial Intelligence Projects</h2>
+
+            <section class="project">
+                <h2 data-translate="rap-classification">Classification of Rap by Linguistic Analysis</h2>
+                <p data-translate="rap-classification-description">I developed an NLP model capable of distinguishing rap from other musical genres by analyzing lyrics with 90% accuracy. This system uses TF-IDF vectorization and SVM/RandomForest classifiers to automatically identify distinctive linguistic characteristics of rap. Text preprocessing and lemmatization allow for detailed analysis of lexical density, rhetorical patterns, and vocabulary specific to this musical genre.</p>
+            </section>
+
+            <section class="project">
+                <h2 data-translate="flappy-bird">Flappy Bird Mastered by Evolving Neural Networks</h2>
+                <p data-translate="flappy-bird-description">This project explores evolutionary artificial intelligence applied to the Flappy Bird game using the NEAT algorithm. I implemented an environment where neural networks evolve through natural selection, learning to navigate by analyzing the space between obstacles and the bird's position. The results are remarkable: after just a few generations, the best networks can play indefinitely.</p>
+            </section>
+        </section>
+
+        <!-- Data Visualization Projects -->
+        <section class="data-visualization">
+            <h2 data-translate="data-visualization">Data Visualization Projects</h2>
+
+            <section class="project">
+                <h2 data-translate="usa-crime">USA Crime Visualization</h2>
+                <p data-translate="usa-crime-description">This project focuses on developing an R Shiny application that visualizes firearm crime data across the USA, categorized by state, year, and crime type. The application offers valuable insights into trends and patterns of gun-related incidents nationwide.</p>
+                <a href="https://visuusa.shinyapps.io/VisualisationCrimeUSA/" class="btn" target="_blank" data-translate="view-shiny-app">View Shiny App</a>
+            </section>
+
+            <section class="project">
+                <h2 data-translate="refugees-crisis">Refugees Crisis Dashboard</h2>
+                <p data-translate="refugees-crisis-description">The goal of this project was to analyze the evolution of the refugee crisis by providing a simple and interactive dashboard created with Power BI.</p>
+                <a href="Projects/PowerBI_project.pdf" class="btn" data-translate="view-dashboard">View Dashboard</a>
+            </section>
+        </section>
+
+        <!-- Data Analysis Projects -->
+        <section class="data-analysis">
+            <h2 data-translate="data-analysis">Data Analysis Projects</h2>
+
+            <section class="project">
+                <h2 data-translate="nba-project">NBA Project</h2>
+                <p data-translate="nba-project-description">Using a linear regression approach, we examine the relationship between NBA players' on-court performance and their financial compensation. Specifically, we aim to answer the question: To what extent do individual performance metrics influence the salaries of basketball players?</p>
+                <a href="Projects/Projet_NBA.pdf" class="btn" data-translate="view-project">View Project</a>
+            </section>
+
+            <section class="project">
+                <h2 data-translate="pubg-project">PUBG Analysis</h2>
+                <p data-translate="pubg-project-description">In this project, we analyzed a dataset of 4,000 PUBG players to uncover trends, identify typical player behaviors, and understand the factors that contribute to success in the game. Unsupervised algorithms such as Hierarchical Clustering (CAH), K-Means, and Gaussian Mixture Models were used to segment the player base and discover hidden patterns.</p>
+                <a href="Projects/PUBG.html" class="btn" data-translate="view-project">View Project</a>
+            </section>
+        </section>
+
+        <!-- Side Projects  -->
+        <section class="other-projects">
+            <h2 data-translate="other-projects">Other Projects</h2>
+
+            <section class="project">
+                <h2 data-translate="mcmc-project">Decrypting Text with MCMC</h2>
+                <p data-translate="mcmc-project-description">This project develops an algorithm to decrypt messages encoded with substitution ciphers. Using Markov Chain Monte Carlo (MCMC) methods, the algorithm analyzes encrypted text patterns to reverse the substitutions and recover the original messages.</p>
+                <a href="Projects/MCMC_Decryptage_sortie.html" class="btn" data-translate="view-project">View Project</a>
+            </section>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

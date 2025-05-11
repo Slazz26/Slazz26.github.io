@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="page-title">Paul Vallée - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Styles spécifiques à la page d'accueil */
+        .hero-section {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .section-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #3498db;
+            margin: 15px auto;
+        }
+        
+        .section-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        
+        .featured-link {
+            display: block;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 15px 30px;
+            margin: 40px auto;
+            max-width: 300px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .featured-link:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .skill-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 180px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .contact-method {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .contact-link {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-link:hover {
+            color: #3498db;
+        }
+        
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-text {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-content {
+                font-size: 1rem;
+            }
+            
+            .skill-card {
+                width: 130px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <button id="languageToggle">
+            <span class="lang-en">EN</span>
+            <span class="lang-fr">FR</span>
+        </button>
+    </div>
+    
+    <header>
+        <h1>Paul Vallée</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html" data-translate="home">Home</a></li>
+            <li><a href="experiences.html" data-translate="experiences">Experiences</a></li>
+            <li><a href="project.html" data-translate="projects">Projects</a></li>
+            <li><a href="resume.html" data-translate="resume">Resume</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title" data-translate="hero-title">Data Science Journey</h1>
+            <h2 class="hero-subtitle" data-translate="hero-subtitle">From Academic Theory to Professional Practice</h2>
+        </div>
+    </section>
+    
+    <main>
+        <!-- Academic Journey Section -->
+        <section class="section-container">
+            <h2 class="section-title" data-translate="academic-journey">Academic Journey</h2>
+            <div class="section-content" data-translate="academic-text">
+                <p>My academic path has been shaped by a fascination with the intersection of mathematics, statistics, and real-world applications. Recently graduating with a dual Master's degree in Applied Mathematics and Statistics (with Data Science & AI specialization) and a Magistère in Statistics and Economic Modeling, I've built a solid theoretical foundation that supports my practical work.</p>
+                
+                <p>Throughout my studies, I've been particularly drawn to the power of statistical modeling and machine learning algorithms to extract meaningful patterns from complex datasets. The rigorous mathematical training I received has instilled in me a methodical approach to problem-solving and a keen attention to detail that proves valuable in data analysis contexts.</p>
+                
+                <p>What I value most from my academic experience is the versatility it has given me. From theoretical statistical concepts to practical programming skills, from algorithm design to data visualization techniques, my education has equipped me with the tools to approach diverse data challenges with confidence. The collaborative projects undertaken during my studies also fostered my ability to work effectively in interdisciplinary teams, translating technical insights into accessible information for various stakeholders.</p>
+            </div>
+            
+            <a href="project.html" class="featured-link" data-translate="explore-projects">Explore My Academic Projects</a>
+        </section>
+        
+        <!-- Professional Experience Section -->
+        <section class="section-container">
+            <h2 class="section-title" data-translate="professional-journey">Professional Experience</h2>
+            <div class="section-content" data-translate="professional-text">
+                <p>My professional journey spanning approximately 1.5 years across diverse sectors has been instrumental in translating my academic knowledge into practical expertise. Through internships and work-study programs in healthcare, economic research, and the food industry, I've developed a versatile approach to data science challenges in real-world contexts.</p>
+                
+                <p>My experience at the Institut de Cancérologie de l'Ouest was particularly transformative, where I worked on extracting medical data from unstructured clinical documents using LLMs. This project taught me the importance of domain-specific knowledge in data science applications and how AI can meaningfully impact critical sectors like healthcare. It also strengthened my ability to manage complex data pipelines and collaborate with domain experts.</p>
+                
+                <p>Working at the Center for Research in Economics and Management broadened my perspective by applying data science to urban planning challenges. Developing time series forecasting models for traffic sensors introduced me to the intricacies of data reliability and the process of building specialized tools that empower users with limited technical backgrounds.</p>
+                
+                <p>These professional experiences have reinforced my passion for applying data science to solve meaningful problems. They've also helped me develop a pragmatic approach that balances technical sophistication with practical implementation constraints. I've learned that effective data science isn't just about complex algorithms; it's about creating solutions that provide actionable insights and integrate seamlessly into existing workflows.</p>
+            </div>
+            
+            <a href="experiences.html" class="featured-link" data-translate="discover-experiences">Discover My Work Experience</a>
+        </section>
+        
+        <!-- Core Competencies Section -->
+        <section class="section-container">
+            <h2 class="section-title" data-translate="core-competencies">Core Competencies</h2>
+            <div class="section-content" data-translate="competencies-text">
+                <p>Through my academic and professional journey, I've developed a set of core competencies that define my approach to data science. My technical skills span the full data lifecycle—from data collection and cleaning to advanced analysis and visualization. I'm proficient in Python and R for data analysis, have experience with machine learning frameworks, and can effectively communicate findings through interactive dashboards and clear visualizations.</p>
+                
+                <p>Beyond technical abilities, I've cultivated a problem-solving mindset that begins with understanding the fundamental questions behind data challenges. I believe in starting with proper problem formulation before jumping to technical solutions, ensuring that the analytical approach aligns with the actual needs.</p>
+                
+                <p>I also pride myself on my adaptability and continuous learning approach. The field of data science evolves rapidly, and I've demonstrated my ability to quickly grasp new concepts and technologies. This adaptability has served me well when working across different sectors, each with their unique data challenges and domain-specific considerations.</p>
+                
+                <p>Effective communication complements my technical skills, allowing me to translate complex findings into actionable insights for stakeholders with varying technical backgrounds. This skill has proven particularly valuable when collaborating with domain experts and decision-makers.</p>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 data-translate="programming">Programming</h3>
+                    <p>Python, R, SQL/NoSQL, HTML/CSS</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 data-translate="ai-ml">AI & Machine Learning</h3>
+                    <p>Deep Learning, NLP, LLM</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 data-translate="data-viz">Data Visualization</h3>
+                    <p>RShiny, PowerBI</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 data-translate="data-engineering">Data Engineering</h3>
+                    <p>ETL, Web Scraping, Azure Cloud, GCP</p>
+                </div>
+            </div>
+            
+            <a href="resume.html" class="featured-link" data-translate="view-full-resume">View My Full Resume</a>
+        </section>
+        
+        <!-- Featured Project Section -->
+        <section class="section-container">
+            <h2 class="section-title" data-translate="featured-project">Featured Project</h2>
+            <div class="section-content" data-translate="featured-project-text">
+                <p>Among my various projects, the Rennes Data Challenge 2025 stands out as a significant achievement that exemplifies my approach to data science challenges. As a finalist in the 'Best Project' category, my team and I tackled a complex resource planning problem for Enedis within a 24-hour timeframe.</p>
+                
+                <p>This hackathon experience encapsulated many aspects of real-world data science: working under tight deadlines, collaborating effectively in a team, rapidly understanding a domain-specific problem, and developing a solution that balances technical sophistication with practical utility. Using time series forecasting techniques, we created a model that could predict resource requirements across different activities, timeframes, and skill categories.</p>
+                
+                <p>What made this project particularly rewarding was seeing how our data-driven approach could directly impact organizational planning and efficiency. It reinforced my belief in the power of data science to transform business operations and support better decision-making.</p>
+            </div>
+            
+            <a href="project.html#rennes-challenge" class="featured-link" data-translate="see-project-details">See Project Details</a>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="section-container">
+            <h2 class="section-title" data-translate="contact-section">Get In Touch</h2>
+            <div class="section-content" data-translate="contact-text">
+                <p>As a recent graduate seeking my first full-time position in data science, I'm eager to connect with professionals and organizations working on interesting data challenges. Whether you're looking to discuss potential opportunities, collaborate on projects, or simply exchange ideas about data science and AI, I'd be delighted to hear from you.</p>
+                
+                <p>I'm particularly interested in roles that would allow me to apply my combined expertise in statistics, machine learning, and domain-specific applications while continuing to grow as a data professional. If you believe my profile could be a good fit for your team or project, please don't hesitate to reach out.</p>
+            </div>
+            
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 data-translate="email">Email</h3>
+                    <a href="mailto:paul.vallee1@icloud.com" class="contact-link">paul.vallee1@icloud.com</a>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3 data-translate="linkedin">LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/paul-vall%C3%A9e-645aa5256/" target="_blank" class="contact-link" data-translate="connect-linkedin">Connect on LinkedIn</a>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 data-translate="portfolio">Portfolio</h3>
+                    <a href="https://Slazz26.github.io" target="_blank" class="contact-link">Slazz26.github.io</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p data-translate="footer-text">This portfolio website was designed and built entirely by me, Paul Vallée, using HTML, CSS, and JavaScript. It showcases my journey, skills, and aspirations as a data scientist while also demonstrating my web development capabilities.</p>
+            <p>&copy; 2025 Paul Vallée</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

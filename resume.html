@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="page-title">Paul Vallée - Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Style pour le bouton de téléchargement PDF */
+        .download-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            z-index: 100;
+            cursor: pointer;
+        }
+        .download-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        .download-btn i {
+            margin-right: 8px;
+        }
+        
+        .skills ul li {
+            color: white;
+        }
+
+        /* Config pour l'impression du CV */
+        @media print {
+            /* Reset des marges du navigateur */
+            @page {
+                margin: 0;
+                size: A4 portrait;
+            }
+            
+            /* Cache les éléments inutiles */
+            .language-toggle, .download-btn, nav, header, footer {
+                display: none !important;
+            }
+            
+            /* Format de base */
+            body {
+                margin: 0 !important;
+                padding: 0 !important;
+                font-size: 9pt !important;
+                background-color: white !important;
+                line-height: 1.2 !important; /* Augmenté pour plus d'espacement */
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                height: 297mm !important; /* Hauteur A4 */
+                overflow: hidden !important; /* Empêche les débordements sur une seconde page */
+            }
+            
+            /* Structure globale */
+            .resume-container {
+                display: flex !important;
+                flex-direction: row !important;
+                width: 210mm !important; /* Largeur A4 */
+                height: 297mm !important; /* Hauteur A4 */
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+                page-break-after: avoid !important; /* Évite les sauts de page */
+            }
+            
+            main.resume-container {
+                padding-top: 5mm !important;
+                padding-bottom: 5mm !important;
+            }
+            
+            /* Barre latérale */
+            .resume-sidebar {
+                width: 23% !important; /* Un peu plus large */
+                min-height: 297mm !important;
+                height: 100% !important;
+                padding: 10mm 10px 10mm 10px !important; /* Plus d'espacement horizontal */
+                font-size: 8.5pt !important; /* Légèrement plus grand */
+                background-color: #2c3e50 !important;
+                color: white !important;
+                box-sizing: border-box !important;
+                position: relative !important;
+                margin: 0 !important;
+            }
+            
+            /* Contenu principal */
+            .resume-main {
+                width: 77% !important;
+                padding: 10mm 10px 10mm 10px !important; /* Plus d'espacement horizontal */
+                box-sizing: border-box !important;
+            }
+            
+            /* Optimisation des sections */
+            .resume-section {
+                margin-bottom: 4px !important; /* Plus d'espace entre les sections */
+                padding-bottom: 2px !important;
+                page-break-inside: avoid !important;
+            }
+            
+            /* Versions courtes/longues */
+            .print-short {
+                display: block !important;
+                margin: 0 !important;
+                line-height: 1.2 !important; /* Augmenté */
+            }
+            .print-full {
+                display: none !important;
+            }
+            
+            /* Style des titres */
+            h1, h2, h3, p, li {
+                margin-top: 0 !important;
+                margin-bottom: 2px !important; /* Plus d'espace */
+                line-height: 1.2 !important; /* Augmenté */
+            }
+            
+            h1 {
+                font-size: 14pt !important;
+                margin-bottom: 3px !important;
+            }
+            
+            h2 {
+                font-size: 10pt !important;
+                margin-top: 3px !important; /* Plus d'espace */
+                margin-bottom: 3px !important; /* Plus d'espace */
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 2px !important;
+            }
+            
+            h3 {
+                font-size: 9pt !important;
+                margin-bottom: 1px !important;
+                font-weight: bold !important;
+            }
+            
+            /* En-tête barre latérale */
+            .cv-name {
+                display: block !important;
+                font-size: 13pt !important;
+                font-weight: bold;
+                margin-bottom: 4px !important;
+                text-align: center;
+                color: white !important;
+            }
+            
+            .cv-title {
+                display: block !important;
+                font-size: 9pt !important;
+                font-style: italic;
+                margin-bottom: 8px !important; /* Plus d'espace */
+                text-align: center;
+                color: white !important;
+            }
+            
+            /* Sections barre latérale */
+            .resume-sidebar section {
+                margin-bottom: 8px !important; /* Plus d'espace entre les sections */
+                padding-bottom: 4px !important;
+            }
+            
+            .resume-sidebar h2 {
+                font-size: 9pt !important;
+                margin-bottom: 3px !important;
+                color: #3498db !important;
+            }
+            
+            .resume-sidebar p, .resume-sidebar li {
+                margin: 0 0 4px 0 !important; /* Plus d'espace entre les éléments */
+                font-size: 8pt !important; /* Légèrement plus grand */
+                color: white !important;
+                line-height: 1.5 !important; /* Augmenté significativement */
+            }
+            
+            /* Contact info */
+            .resume-sidebar .contact-info p {
+                margin: 0 0 5px 0 !important; /* Plus d'espace */
+                line-height: 1.5 !important; /* Augmenté */
+                color: white !important;
+                display: flex !important;
+                align-items: center !important;
+            }
+            
+            .resume-sidebar .contact-info p i {
+                width: 15px !important;
+                margin-right: 5px !important;
+            }
+            
+            /* Photo de profil */
+            .profile-photo {
+                width: 60% !important;
+                max-width: 85px !important;
+                margin: 0 auto 6px auto !important; /* Plus d'espace en bas */
+                display: block;
+                border-radius: 50% !important;
+                border: 2px solid white !important;
+                box-sizing: border-box !important;
+                overflow: hidden !important;
+            }
+            
+            /* Sections de contenu */
+            .education-item, .experience-item, .project-item {
+                margin-bottom: 3px !important; /* Plus d'espace */
+                padding-bottom: 1px !important;
+                page-break-inside: avoid !important;
+            }
+            
+            /* Éléments de texte */
+            .company, .institution {
+                font-size: 7.5pt !important; /* Légèrement plus grand */
+                margin: 0 0 1px 0 !important; /* Ajout d'espace */
+                font-style: italic;
+            }
+            
+            /* Listes */
+            ul, ol {
+                margin: 0 0 2px 0 !important; /* Ajout d'espace */
+                padding-left: 14px !important; /* Plus d'espace */
+            }
+            
+            li {
+                margin: 0 0 1px 0 !important; /* Ajout d'espace */
+                padding: 0 !important;
+                line-height: 1.2 !important; /* Augmenté */
+            }
+            
+            /* Compétences */
+            .skills {
+                margin: 0 0 2px 0 !important; /* Ajout d'espace */
+                font-size: 8pt !important; /* Légèrement plus grand */
+            }
+            
+            /* Compétences techniques */
+            .tech-skills ul li {
+                margin: 0 0 2px 0 !important; /* Plus d'espace */
+                padding: 0 !important;
+                line-height: 1.2 !important; /* Augmenté */
+                font-size: 8pt !important; /* Légèrement plus grand */
+                color: white !important;
+            }
+            
+            /* Niveau de langues */
+            .skill-level {
+                display: inline-block !important;
+                height: 7px !important;
+                background-color: #3498db !important;
+                vertical-align: middle !important;
+                /* Correction pour les barres de niveau de langue */
+                max-width: 80% !important; /* Empêche les débordements */
+            }
+            
+            /* Skills des expériences */
+            .experience-skills, .project-skills {
+                font-size: 7pt !important; /* Légèrement plus grand */
+                margin: 0 0 1px 0 !important; /* Ajout d'espace */
+                padding: 0 !important;
+                line-height: 1.2 !important; /* Augmenté */
+            }
+            
+            /* Section profil */
+            .profile p {
+                font-size: 8pt !important; /* Légèrement plus grand */
+                margin: 0 0 2px 0 !important; /* Ajout d'espace */
+                padding: 0 !important;
+                text-align: justify !important;
+                line-height: 1.3 !important; /* Augmenté */
+            }
+            
+            /* Section éducation */
+            .education-item h3 {
+                margin-bottom: 1px !important; /* Ajout d'espace */
+            }
+            
+            .education-item p {
+                margin: 0 0 1px 0 !important; /* Ajout d'espace */
+                line-height: 1.2 !important; /* Augmenté */
+                font-size: 7.5pt !important; /* Légèrement plus grand */
+            }
+            
+            /* Cache les éléments du navigateur */
+            .url-info {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <button id="languageToggle">
+          <span class="lang-en">EN</span>
+          <span class="lang-fr">FR</span>
+        </button>
+    </div>
+    <!-- Bouton télécharger PDF -->
+    <button onclick="printCV()" class="download-btn" data-translate="download-resume">
+        <i class="fas fa-file-pdf"></i> Download CV
+    </button>
+    <header>
+        <h1>Paul Vallée</h1>
+        <p data-translate="student-title">Data Science Student</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" data-translate="home">Home</a></li>
+            <li><a href="experiences.html" data-translate="experiences">Experiences</a></li>
+            <li><a href="project.html" data-translate="projects">Projects</a></li>
+            <li><a href="resume.html" data-translate="resume">Resume</a></li>
+        </ul>
+    </nav>
+    <main class="resume-container">
+        <aside class="resume-sidebar">
+            <!-- Nom pour la version imprimée uniquement -->
+            <h1 class="cv-name" style="display: none;">Paul Vallée</h1>
+            <p class="cv-title" style="display: none;" data-translate="student-title">Data Science Student</p>
+            
+            <img src="Photos/photo_cv.jpeg" alt="Paul Vallée" class="profile-photo" style="border-radius: 50%; border: 2px solid white;">
+            <section class="contact-info">
+                <h2><i class="fas fa-address-card"></i> <span data-translate="contact">Contact</span></h2>
+                <p style="display: flex; align-items: center;">
+                    <i class="fas fa-envelope" style="width: 15px; margin-right: 5px;"></i> paul.vallee1@icloud.com
+                </p>
+                <p style="white-space: nowrap; display: flex; align-items: center;">
+                    <i class="fas fa-globe" style="width: 15px; margin-right: 5px;"></i>
+                    <!-- Version pour affichage sur écran -->
+                    <a href="https://Slazz26.github.io" target="_blank" style="color: #5d8aa8;" class="print-full" data-translate="portfolio">Portfolio</a>
+                    
+                    <!-- Version pour impression: affiche l'URL directement -->
+                    <span class="print-short" style="display: none; color: white;">Slazz26.github.io</span>
+                </p>
+                <p style="display: flex; align-items: center;">
+                    <i class="fas fa-phone" style="width: 15px; margin-right: 5px;"></i> 06 40 79 65 80
+                </p>
+                <p style="display: flex; align-items: center;">
+                    <i class="fas fa-map-marker-alt" style="width: 15px; margin-right: 5px;"></i> Paris, Nantes, Rennes, Laval
+                </p>
+                <p style="display: flex; align-items: center;">
+                    <i class="fas fa-car" style="width: 15px; margin-right: 5px;"></i> <span data-translate="drivers-license">Driver's License</span>
+                </p>
+            </section>
+            <section class="skills">
+                <h2><i class="fas fa-cogs"></i> <span data-translate="skills">Skills</span></h2>
+                <ul>
+                    <li data-translate="skill-adaptability">Adaptability</li>
+                    <li data-translate="skill-organization">Organization and Rigor</li>
+                    <li data-translate="skill-autonomy">Autonomy and Teamwork</li>
+                </ul>
+            </section>
+            <section class="languages">
+                <h2><i class="fas fa-language"></i> <span data-translate="languages">Languages</span></h2>
+                <p style="white-space: nowrap;"><span data-translate="french">French</span>:&nbsp;<span class="skill-level" style="width: 80%;"></span></p>
+                <p style="white-space: nowrap;"><span data-translate="english">English</span>:&nbsp;<span class="skill-level" style="width: 60%;"></span></p>
+            </section>
+            <section class="tech-skills">
+                <h2><i class="fas fa-laptop-code"></i> <span data-translate="technical-skills">Technical Skills</span></h2>
+                <ul>
+                    <li>Python</li>
+                    <li>R & RShiny</li>
+                    <li>SQL/NoSQL</li>
+                    <li>ML & Deep Learning & NLP</li>
+                    <li>LLM & Prompt Engineering & RAG</li>
+                    <li>Data Visualization</li>
+                    <li>Web Scrapping</li>
+                    <li>ETL</li>
+                    <li>Excel & VBA</li>
+                    <li>PowerBI</li>
+                    <li>Git</li>
+                    <li>HTML/CSS</li>
+                    <li>Azure Cloud & GCP</li>
+                </ul>
+            </section>
+        </aside>
+        <div class="resume-main">
+            <section class="resume-section profile">
+                <h2><i class="fas fa-user"></i> <span data-translate="profile">Profile</span></h2>
+                <p data-translate="profile-description">Currently pursuing a dual degree, including a Master's in Applied Mathematics and Statistics with a focus on Data Science and AI, as well as a Magistère in Statistics and Economic Modeling. This combination allows me to enhance my expertise in statistics and modeling. My goal is to apply the academic knowledge gained throughout my studies and further develop my professional experience.</p>
+            </section>
+            <section class="resume-section education">
+                <h2><i class="fas fa-graduation-cap"></i> <span data-translate="education">Education</span></h2>
+                <div class="education-item">
+                    <h3 data-translate="masters-mas">Master MAS : Mathematics Applied to Statistics with AI</h3>
+                    <p class="institution" data-translate="university-rennes2">University of Rennes 2, Rennes | 2023 to present</p>
+                    <p data-translate="masters-mas-description">Data engineering and analysis, Machine Learning, Deep Learning, NLP, Web Scraping</p>
+                    <p class="print-full"><strong data-translate="honors">Honors:</strong> <span data-translate="distinction">Distinction</span></p>
+                </div>
+                <div class="education-item">
+                    <h3 data-translate="masters-dual">Dual Degree: Master's in Statistics and Economic Modeling</h3>
+                    <p class="institution" data-translate="university-rennes1">University of Rennes, Rennes | 2022 to present</p>
+                    <p data-translate="masters-dual-description">Dashboard, Statistical modeling, spatial statistics, survival analysis</p>
+                    <p class="print-full"><strong data-translate="honors">Honors:</strong> <span data-translate="distinction">Distinction</span></p>
+                </div>
+                <div class="education-item">
+                    <h3 data-translate="bachelors">Bachelor's in MIASHS: Mathematics and Computer Science Applied to Humanities and Social Sciences</h3>
+                    <p class="institution" data-translate="university-rennes1-2">University of Rennes, Rennes | 2020 to 2023</p>
+                    <p data-translate="bachelors-path">Data Science, Statistics and Econometrics (SDSE) path</p>
+                    <p class="print-full"><strong data-translate="honors">Honors:</strong> <span data-translate="distinction">Distinction</span></p>
+                </div>
+                <div class="education-item">
+                    <h3 data-translate="baccalaureate">Baccalaureate Economics and Social specializing in Mathematics</h3>
+                    <p class="institution" data-translate="lycee-douanier">Lycée Douanier Rousseau, Laval | 2017 to 2020</p>
+                    <p class="print-full"><strong data-translate="honors">Honors:</strong> <span data-translate="distinction">Distinction</span></p>
+                </div>
+            </section>
+            <section class="resume-section experience">
+                <h2><i class="fas fa-briefcase"></i> <span data-translate="professional-experience">Professional Experience</span></h2>
+                
+                <div class="experience-item">
+                    <h3 data-translate="data-scientist-apprentice">Data Scientist Apprentice</h3>
+                    <p class="company" data-translate="ico-location">Institut de Cancérologie de l'Ouest, Nantes | September 2024 to September 2025</p>
+                    
+                    <!-- Version complète (visible sur le site) -->
+                    <p class="print-full" data-translate="data-scientist-apprentice-description">Design and implementation of a complete automated pipeline for extracting medical data from unstructured clinical documents, enriching a Health Data Warehouse (EDS) for oncology research. Using generative artificial intelligence (LLM).</p>
+                    <div class="print-full missions-description" data-translate="missions_1"></div>
+                    
+                    <!-- Version courte (visible uniquement en impression) -->
+                    <p class="print-short" style="display: none;" data-translate="data-scientist-apprentice-description-short">Medical data extraction from unstructured clinical documents using LLM for oncology research.</p>
+                    
+                    <p class="experience-skills"><strong>Skills:</strong> <span data-translate="skills_1">Python | R | Deep Learning | LLM | Azure SDK | Prompt Engineering | NLP</span></p>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 data-translate="research-assistant">Research Assistant</h3>
+                    <p class="company" data-translate="crem-location">Center for Research in Economics and Management (CREM), Rennes | May 2024 to July 2024</p>
+                    
+                    <!-- Version complète (visible sur le site) -->
+                    <p class="print-full" data-translate="research-assistant-description">In collaboration with the environmental association Agis-Ta-Terre, the mission aimed to improve the reliability of urban traffic sensors responsible for collecting mobility data for the city of Châteaubourg, to help local decision-makers make informed urban planning decisions.</p>
+                    <div class="print-full missions-description" data-translate="missions_2"></div>
+                    
+                    <!-- Version courte (visible uniquement en impression) -->
+                    <p class="print-short" style="display: none;" data-translate="research-assistant-description-short">Improved urban traffic sensor reliability through time series forecasting and R package development.</p>
+                    
+                    <p class="experience-skills"><strong>Skills:</strong> <span data-translate="skills_2">R | ML | Time Series | Statistics | Data Viz | Git</span></p>
+                </div>
+                        
+                <div class="experience-item">
+                    <h3 data-translate="intern-data-project-manager">Intern Data Steward</h3>
+                    <p class="company" data-translate="lactalis-location">Lactalis, Laval | May 2023 to August 2023</p>
+                    
+                    <!-- Version complète (visible sur le site) -->
+                    <p class="print-full" data-translate="intern-data-project-manager-description">The objective of the missions was to improve data quality and ensure regulatory compliance in the food industry by automating certain anomaly detection processes in the company's data.</p>
+                    <div class="print-full missions-description" data-translate="missions_3"></div>
+                    
+                    <!-- Version courte (visible uniquement en impression) -->
+                    <p class="print-short" style="display: none;" data-translate="intern-data-project-manager-description-short">Data quality improvement and regulatory compliance in the food industry through automation.</p>
+                    
+                    <p class="experience-skills"><strong>Skills:</strong> <span data-translate="skills_3">VBA | NLP | RegEx | Excel | Data Quality</span></p>
+                </div>
+            </section>
+
+            <section class="resume-section projects">
+                <h2><i class="fas fa-project-diagram"></i> <span data-translate="key-projects">Key Projects</span></h2>
+                
+                <div class="project-item">
+                    <h3 data-translate="rennes-challenge">Finalist at Rennes Data Challenge 2025</h3>
+                    <!-- Version complète (visible sur le site) -->
+                    <p class="print-full" data-translate="rennes-challenge-description">Our team was a finalist in the 'Best Project' category at the Rennes Data Challenge by developing a solution for Enedis in just 24 hours. Faced with the strategic challenge of resource planning, the problem was to determine if Enedis would have sufficient operational capacity and to identify potential bottlenecks.</p>
+                    
+                    <!-- Version courte (visible uniquement en impression) -->
+                    <p class="print-short" style="display: none;" data-translate="rennes-challenge-description-short">Finalist team developing a predictive model for Enedis resource planning in 24-hour hackathon.</p>
+                </div>
+            
+                <div class="project-item">
+                    <h3 data-translate="usa-crime">USA Crime Visualization</h3>
+                    <!-- Version complète (visible sur le site) -->
+                    <p class="print-full" data-translate="usa-crime-description">This project focuses on developing an R Shiny application that visualizes firearm crime data across the USA, categorized by state, year, and crime type. The application offers valuable insights into trends and patterns of gun-related incidents nationwide.</p>
+                    
+                    <!-- Version courte (visible uniquement en impression) -->
+                    <p class="print-short" style="display: none;" data-translate="usa-crime-description-short">Interactive R Shiny dashboard visualizing firearm crime trends across the USA by state, year, and crime type.</p>
+                </div>
+            
+                <div class="project-item">
+                    <h3 data-translate="pubg-project">PUBG Analysis</h3>
+                    <!-- Version complète (visible sur le site) -->
+                    <p class="print-full" data-translate="pubg-project-description">In this project, we analyzed a dataset of 4,000 PUBG players to uncover trends, identify typical player behaviors, and understand the factors that contribute to success in the game. Unsupervised algorithms such as Hierarchical Clustering (CAH), K-Means, and Gaussian Mixture Models were used to segment the player base and discover hidden patterns.</p>
+                    
+                    <!-- Version courte (visible uniquement en impression) -->
+                    <p class="print-short" style="display: none;" data-translate="pubg-project-description-short">Analysis of 4,000 PUBG players using unsupervised learning to identify success factors and player segments.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Cache les chemins et autres infos URL -->
+    <div class="url-info" style="display: none;"></div>
+    
+    <script>
+        // Fonction pour exporter le CV en PDF
+        function printCV() {
+            // Sauvegarde le titre original
+            const originalTitle = document.title;
+            document.title = "CV_VALLEE_Paul_Data_Science";
+            
+            // Affiche les versions courtes pour l'impression
+            document.querySelectorAll('.print-short').forEach(el => {
+                el.style.display = 'block';
+            });
+            
+            // Cache les versions longues
+            document.querySelectorAll('.print-full').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // Affiche le nom dans la barre latérale
+            document.querySelector('.cv-name').style.display = 'block';
+            document.querySelector('.cv-title').style.display = 'block';
+            
+            // Force le style de la barre latérale pour l'impression
+            document.querySelectorAll('.resume-sidebar').forEach(el => {
+                el.setAttribute('style', 'background-color: #2c3e50 !important; color: white !important; display: block !important; min-height: 297mm !important; height: 100% !important; width: 23% !important;');
+            });
+            
+            // Lance l'impression
+            window.print();
+            
+            // Restaure l'état original après l'impression
+            setTimeout(function() {
+                document.title = originalTitle;
+                
+                // Cache les versions courtes
+                document.querySelectorAll('.print-short').forEach(el => {
+                    el.style.display = 'none';
+                });
+                
+                // Affiche les versions longues
+                document.querySelectorAll('.print-full').forEach(el => {
+                    el.style.display = 'block';
+                });
+                
+                // Cache le nom dans la barre latérale
+                document.querySelector('.cv-name').style.display = 'none';
+                document.querySelector('.cv-title').style.display = 'none';
+                
+                // Restaure le style original
+                document.querySelectorAll('.resume-sidebar').forEach(el => {
+                    el.removeAttribute('style');
+                });
+            }, 1000);
+        }
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
