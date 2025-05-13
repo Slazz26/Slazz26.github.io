@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'data-scientist-apprentice-description': 'Design and implementation of a complete automated pipeline for extracting medical data from unstructured clinical documents, enriching a Health Data Warehouse (EDS) for oncology research. Using generative artificial intelligence (LLM).',
       'missions_1': `
       <ul>
-        <li>Development of a solution based on large language models (LLM) for the precise extraction of breast cancer biomarkers (ER, PR, HER2) and temporal data associated with metastatic cancer stages.</li>
+        <li>Development of a solution based on large language models (LLM) hosted on an Azure Cloud infrastructure. for the precise extraction of breast cancer biomarkers (ER, PR, HER2) and temporal data associated with metastatic cancer stages.</li>
         <li>Writing a scientific paper detailing the methodology and research results for academic valorization of the project.</li>
       </ul>`,
       'skills_1': 'Python | R | Deep Learning | LLM | Azure SDK | RAG | Prompt Engineering | NLP | Scientific Research',
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "experiences_title": "My Professional Experiences",
 
       // CV Version Courte
-      "data-scientist-apprentice-description-short": "Medical data extraction from unstructured clinical documents using LLM for oncology research.",
+      "data-scientist-apprentice-description-short": "Design of a solution for extracting structured medical data from unstructured clinical documents using LLMs hosted on Azure Cloud infrastructure, to feed a health data warehouse (HDW) dedicated to oncology research.",
       "research-assistant-description-short": "Improved urban traffic sensor reliability through time series forecasting and R package development.",
       "intern-data-project-manager-description-short": "Data quality improvement and regulatory compliance in the food industry through automation.",
       "rennes-challenge-description-short": "Finalist team developing a predictive model for Enedis resource planning in 24-hour hackathon.",
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'data-scientist-apprentice-description': 'Conception et implémentation d\'une pipeline complète d\'extraction automatisée de données médicales à partir de documents cliniques non structurés, permettant d\'enrichir un Entrepôt de Données de Santé (EDS) pour la recherche en oncologie. Grâce à l\'intelligence artificielle générative (LLM).',
       'missions_1': `
       <ul>
-        <li>Développement d'une solution basée sur les modèles de langage (LLM) pour l'extraction précise des biomarqueurs du cancer du sein (ER, PR, HER2) et des données temporelles associées aux stades métastatiques du cancer.</li>
+        <li>Développement d'une solution basée sur les modèles de langage (LLM) ) hébergés sur une infrastructure Azure Cloud.  pour l'extraction précise des biomarqueurs du cancer du sein (ER, PR, HER2) et des données temporelles associées aux stades métastatiques du cancer.</li>
         <li>Rédaction d'un article scientifique détaillant la méthodologie et les résultats de recherche pour valorisation académique du projet.</li>
       </ul>`,
       'skills_1': 'Python | R | Deep Learning | LLM | Azure SDK | RAG | Prompt Engineering | NLP | Recherche scientifique',
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "experiences_title": "Mes expériences professionnelles",
 
       // CV Version Courte
-      "data-scientist-apprentice-description-short": "Extraction de données médicales à partir de documents cliniques non structurés via LLM pour la recherche en oncologie.",
+      "data-scientist-apprentice-description-short": "Création d’une solution d’extraction de données médicales structurées à partir de documents cliniques non structurés, en s’appuyant sur des LLM hébergés sur une infrastructure Azure Cloud, afin d’alimenter un entrepôt de données de santé (EDS) dédié à la recherche en oncologie.",
       "research-assistant-description-short": "Amélioration de la fiabilité des capteurs de trafic urbain par prévision de séries temporelles et développement de package R.",
       "intern-data-project-manager-description-short": "Amélioration de la qualité des données et conformité réglementaire dans l'industrie agroalimentaire par automatisation.",
       "rennes-challenge-description-short": "Équipe finaliste développant un modèle prédictif pour la planification des ressources d'Enedis lors d'un hackathon de 24h.",
